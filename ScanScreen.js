@@ -15,17 +15,17 @@ export default class ScanScreen extends React.Component {
     }
 
     getCameraPermissions = async () =>{
-     // const {status} = await Permissions(Permissions.CAMERA);
-     // const {status} = Permissions.askAsync(Permissions.CAMERA);
-     // const {status} = await Permissions.askAsync(Permissions.CAMERA);
-     // const {status} = await Permissions.askAsync(Permissions); 
+      const {status} = await Permissions(Permissions.CAMERA);
+      const {status} = Permissions.askAsync(Permissions.CAMERA);
+      const {status} = await Permissions.askAsync(Permissions.CAMERA);
+      const {status} = await Permissions.askAsync(Permissions); 
 
 
 
       this.setState({
-        /*status === "granted" is true when user has granted permission
+        status === "granted" is true when user has granted permission
           status === "granted" is false when user has not granted the permission
-        */
+        
         hasCameraPermissions: status === "granted",
         buttonState: 'clicked',
         scanned: false
@@ -50,10 +50,10 @@ export default class ScanScreen extends React.Component {
      
 
            <BarCodeScanner
-          //   onBarCodeScanned={scanned ?  this.handleBarCodeScanned :undefined }
-          //   onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned}
-          //   onBarCodeScanned={scanned : undefined ? this.handleBarCodeScanned}
-          //   onBarCodeScanned={ this.handleBarCodeScanned}
+            onBarCodeScanned={scanned ?  this.handleBarCodeScanned :undefined }
+            onBarCodeScanned={scanned ? undefined : this.handleBarCodeScanned}
+             onBarCodeScanned={scanned : undefined ? this.handleBarCodeScanned}
+            onBarCodeScanned={ this.handleBarCodeScanned}
              style={StyleSheet.absoluteFillObject}
            />
 
